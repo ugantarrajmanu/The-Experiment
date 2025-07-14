@@ -1,0 +1,22 @@
+body {
+    background-color: #171717;
+}
+
+.root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+canvas {
+    border: 1px solid #C8a2c8;
+}
+
+
+.clear-button {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
