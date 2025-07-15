@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Refraction</title>
+</head>
+<body>
+    <div class="annotation">
+        <div class="lilac-line-outline">
+            <div>Actual Path</div>
+            <div class="lilac-line"></div>
+        </div>
+        <div class="lilac-line-outline">
+            <div>Before Medium</div>
+            <div class="lilac-line"></div>
+        </div>
+        <div class="green-line-outline">
+            <div>Inside Medium</div>
+            <div class="green-line"></div>
+        </div>
+        <div class="orange-line-outline">
+            <div>Outside Medium</div>
+            <div class="orange-line"></div>
+        </div>
+    </div>
+    <div class="root"></div>
+    <div class="range-container">
+        <div class="y-range-container">
+            <label for="range">incident angle: </label>
+            <input type="range" title="range" class="y-range" id="y-range" min="0" max="500" value="207">
+            <input type="number" title="range-number" class="y-range" id="y-range-number" min="0" max="500" value="207">
+        </div>
+        <div class="mu-range-container">
+            <label for="mu">mu: </label>
+            <input type="number" title="nu-value" class="mu-range" id="mu-range-number" min="1" max="10" value="1.33" step="0.01">
+        </div>
+        <div class="medium-range-container">
+            <div>
+                <label for="medium-start">Medium Start: </label>
+                <input type="number" title="medium-start-value" class="medium-range" id="medium-start-number" min="0" max="500" value="200" step="10">
+            </div>
+            <div>
+                <label for="medium-end">Medium Start: </label>
+                <input type="number" title="medium-end-value" class="medium-range" id="medium-end-number" min="0" max="500" value="300" step="10">
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="refraction.js"></script>
+</body>
+</html>

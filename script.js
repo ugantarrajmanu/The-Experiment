@@ -3,6 +3,7 @@ let n = 100;
 document.querySelector(".root").innerHTML =
   '<canvas class="container" height="500px" width="500px"></div>';
 
+
 const canvas = document.querySelector(".container");
 const ctx = canvas.getContext("2d");
 
@@ -17,7 +18,6 @@ let grid = Array.from({ length: gridHeight }, () =>
 ctx.fillStyle = "rgba(43, 43, 43)";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-let lastTime = performance.now();
 
 document.querySelector(".container").addEventListener("mousemove", (e) => {
   if (
@@ -41,14 +41,14 @@ document.addEventListener("keydown", (e) => {
   if (e.code === "Escape") {
     clearGrid();
   } else if (e.code === "Space") {
+
     let x = getRandomInt(0, gridWidth - 1);
     let y = getRandomInt(0, gridHeight - 1);
     fallingGrid(x, 0);
-    
   }
 });
 
-function fallingGrid(i, j, now) {
+function fallingGrid(i, j) {
   if (j === gridHeight) return;
 
   if (j - 1 >= 0) {
