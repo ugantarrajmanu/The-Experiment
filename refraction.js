@@ -1,9 +1,9 @@
 const width = 700;
 const height = 500
 let y = 207;
-let mu = 1.33;
+let mu = 5.33;
 let mediumStartX = 200;
-let mediumEndX = 300;
+let mediumEndX = 500;
 let lightSourceY = 250;
 
 document.querySelector(".root").innerHTML = `<canvas class="container" height="${height}px" width="${width}px"></div>`;
@@ -69,7 +69,7 @@ function createRay(y) {
   clearGrid();
 
   // Actual path
-  ctx.strokeStyle = "#C8a2c8";
+  ctx.strokeStyle = "#c8a2c85d";
   ctx.beginPath();
   ctx.moveTo(mediumStartX, y);
   ctx.lineTo(width, actualPath(y));
@@ -83,14 +83,14 @@ function createRay(y) {
   ctx.stroke();
 
   //inside medium
-  ctx.strokeStyle = "green";
+  ctx.strokeStyle = "#973aa8";
   ctx.beginPath();
   ctx.moveTo(mediumStartX, y);
   ctx.lineTo(mediumEndX, insideMediumRay(y));
   ctx.stroke();
 
   // outside medium
-  ctx.strokeStyle = "orange";
+  ctx.strokeStyle = "#ea698b";
   ctx.beginPath();
   ctx.moveTo(mediumEndX, insideMediumRay(y));
   ctx.lineTo(width, refractedPath(y));

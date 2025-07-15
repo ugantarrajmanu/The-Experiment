@@ -40,22 +40,28 @@ canvas {
   gap: 1rem;
 }
 
-.lilac-line {
+.actual-path {
   width: 50px;
   height: 2px;
   background-color: #c8a2c8;
 }
 
-.green-line {
+.before-medium {
   width: 50px;
   height: 2px;
-  background-color: green;
+  background-color: #c8a2c85d;
 }
 
-.orange-line {
+.inside-medium {
   width: 50px;
   height: 2px;
-  background-color: orange;
+  background-color: #973aa8;
+}
+
+.outside-medium {
+  width: 50px;
+  height: 2px;
+  background-color: #ea698b;
 }
 
 .range-container {
