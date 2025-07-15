@@ -13,6 +13,7 @@ let yRangeNumber = document.querySelector("#y-range-number");
 let muRange = document.querySelector("#mu-range-number");
 let mediumStartRange = document.querySelector("#medium-start-number");
 let mediumEndRange = document.querySelector("#medium-end-number");
+let lightSrc = document.querySelector("#src-range-number");
 
 const canvas = document.querySelector(".container");
 const ctx = canvas.getContext("2d");
@@ -137,5 +138,11 @@ mediumStartRange.addEventListener("input", (e) => {
 mediumEndRange.addEventListener("input", (e) => {
   mediumEndRange.value = e.target.value;
   mediumEndX = parseInt(e.target.value);
+  createRay(y);
+});
+
+lightSrc.addEventListener("input", (e) => {
+  lightSrc.value = e.target.value;
+  lightSourceY = parseInt(e.target.value);
   createRay(y);
 });

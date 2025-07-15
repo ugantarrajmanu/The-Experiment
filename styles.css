@@ -77,3 +77,8 @@ canvas {
   display: flex;
   gap: 1rem;
 }
+
+.mu-and-src {
+  display: flex;
+  gap: 1rem;
+}
