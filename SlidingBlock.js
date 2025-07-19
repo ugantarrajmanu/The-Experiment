@@ -66,7 +66,10 @@ function calcWidth() {
 }
 
 function blockPosition(x, y) {
-  const h = sliding.theta === 90 * (Math.PI / 180) ? 0 : block.width * Math.tan(sliding.theta);
+  const h =
+    sliding.theta === 90 * (Math.PI / 180)
+      ? 0
+      : block.width * Math.tan(sliding.theta);
 
   const originY =
     sliding.theta === 90 * (Math.PI / 180)
@@ -127,7 +130,10 @@ function slide() {
     3
   )} m/s <sup>2</sup>`;
 
-  if (Math.tan(sliding.theta) > sliding.mu && sliding.theta !== 90 * (Math.PI / 180)) {
+  if (
+    Math.tan(sliding.theta) > sliding.mu &&
+    sliding.theta !== 90 * (Math.PI / 180)
+  ) {
     sliding.x += sliding.v / 10;
     sliding.v += sliding.a;
     if (sliding.x > slideX / Math.cos(sliding.theta)) {

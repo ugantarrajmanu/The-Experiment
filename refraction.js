@@ -1,12 +1,14 @@
 const width = 700;
-const height = 500
+const height = 500;
 let y = 207;
 let mu = 5.33;
 let mediumStartX = 200;
 let mediumEndX = 500;
 let lightSourceY = 250;
 
-document.querySelector(".root").innerHTML = `<canvas class="container" height="${height}px" width="${width}px"></div>`;
+document.querySelector(
+  ".root"
+).innerHTML = `<canvas class="container" height="${height}px" width="${width}px"></div>`;
 
 let yRange = document.querySelector("#y-range");
 let yRangeNumber = document.querySelector("#y-range-number");
@@ -21,9 +23,8 @@ const ctx = canvas.getContext("2d");
 ctx.fillStyle = "rgb(43, 43, 43)";
 ctx.fillRect(0, 0, width, height);
 
-
 ctx.fillStyle = "rgba(66, 66, 66, 1)";
-ctx.fillRect(mediumStartX, 0, (mediumEndX - mediumStartX), height);
+ctx.fillRect(mediumStartX, 0, mediumEndX - mediumStartX, height);
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -44,7 +45,7 @@ function incidentAngle(y) {
 
 // refraction angle : ok (degrees)
 function refractionAngle(y) {
-  return Math.asin(Math.sin(incidentAngle(y) ) / mu);
+  return Math.asin(Math.sin(incidentAngle(y)) / mu);
 }
 
 // inside medium ray : ok
@@ -96,8 +97,6 @@ function createRay(y) {
   ctx.moveTo(mediumEndX, insideMediumRay(y));
   ctx.lineTo(width, refractedPath(y));
   ctx.stroke();
-
-  
 }
 
 function clearGrid() {
