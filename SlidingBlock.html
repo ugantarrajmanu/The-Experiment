@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sliding Block</title>
+</head>
+<body>
+    <h2>Hey Lilac</h2>
+    <div class="scale">
+        <div class="x-scale">X: 1 unit = 10m</div>
+        <div class="x-scale">Y: 1 unit = 10m</div>
+    </div>
+    <div class="root"></div>
+    <div class="data">
+        <div class="net-force">
+            <div class="net-force-label">Force: </div>
+            <div class="net-force-value"> </div>
+        </div>
+        <div class="accl">
+            <div class="accl-label">Acceleration: </div>
+            <div class="accl-value"></div>
+        </div>
+        <div class="vel">
+            <div class="vel-label">Velocity: </div>
+            <div class="vel-value"></div>
+        </div>
+    </div>
+    <div class="variables">
+        <div class="friction">
+            <label for="mu-range mu-range-number">mu:</label>
+            <input type="range" title="mu-value" min="0" max="2" value="0.55" step="0.001" class="mu-range" id="mu-range" >
+            <input type="number" title="mu-value"  min="0" max="2" value="0.55" step="0.001" class="mu-range" id="mu-range-number">
+        </div>
+        <div class="angle">
+            <label for="angle-range angle-range-number">Angle: </label>
+            <input type="range" title="angle-value" value="30" min="0" max="90" step="1" class="angle-range" id="angle-range">
+            <input type="number" title="angle-value" value="30" min="0" max="90" step="1" class="angle-range" id="angle-range-number">
+        </div>
+        <div class="mass">
+            <label for="mass-range">mass: </label>
+            <input type="number" name="mass-range" class="mass-range" id="mass-range" value="15" min="10" max="500">
+        </div>
+    </div>
+
+    <script src="SlidingBlock.js"></script>    
+</body>
+</html>

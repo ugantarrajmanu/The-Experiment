@@ -1,12 +1,13 @@
 body {
   background-color: #171717;
+  color: #c8a2c8;
 }
 
 .root {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2rem;
+  margin: 1rem;
 }
 
 h1 {
@@ -43,13 +44,13 @@ canvas {
 .actual-path {
   width: 50px;
   height: 2px;
-  background-color: #c8a2c8;
+  background-color: #c8a2c85d;
 }
 
 .before-medium {
   width: 50px;
   height: 2px;
-  background-color: #c8a2c85d;
+  background-color: #c8a2c8;
 }
 
 .inside-medium {
@@ -58,7 +59,7 @@ canvas {
   background-color: #973aa8;
 }
 
-.outside-medium {
+.after-medium {
   width: 50px;
   height: 2px;
   background-color: #ea698b;
@@ -82,3 +83,40 @@ canvas {
   display: flex;
   gap: 1rem;
 }
+
+/* Sliding Block  */
+h2 {
+  text-align: center;
+  margin: 1rem;
+}
+
+.scale {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  margin-bottom: 0.1rem;
+}
+
+.data {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  margin-bottom: 1rem;
+}
+
+.data > div {
+  display: flex;
+  gap: 1rem;
+}
+
+.variables {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  margin-bottom: 1rem;
+}
+
+[type="range"] {
+  width: 12rem;
+}
+

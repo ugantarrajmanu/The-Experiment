@@ -14,7 +14,6 @@ let grid = Array.from({ length: gridHeight }, () =>
   Array.from({ length: gridWidth }, () => 0)
 );
 
-
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -31,7 +30,7 @@ document.querySelector(".container").addEventListener("mousemove", (e) => {
       if (i >= 0 && i < gridWidth && j >= 0 && j < gridHeight) {
         grid[j][i] = 1;
       }
-      newUpdateCanvas();  
+      uodateCanvas();
     };
 
     spawn();
@@ -39,15 +38,14 @@ document.querySelector(".container").addEventListener("mousemove", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-  if (e.code === "Escape") {
-    clearGrid();
-  } else if (e.code === "Space") {
-    console.log("space");
+  if (e.code === "Space") {
     let x = getRandomInt(0, gridWidth - 1);
-    let y = 0;
 
     grid[0][x] = 1;
-    newUpdateCanvas()
+    uodateCanvas();
+  } else if (e.code === "Escape") {
+    console.log("escape");
+    clearGrid();
   }
 });
 
@@ -68,21 +66,33 @@ function fallingSandLoop() {
         if (grid[j + 1][i] === 0) {
           grid[j][i] = 0;
           grid[j + 1][i] = 1;
-        } else if (i + 1 < gridWidth && grid[j + 1][i + 1] === 0) {
-          grid[j][i] = 0;
-          grid[j + 1][i + 1] = 1;
-        } else if (i - 1 >= 0 && grid[j + 1][i - 1] === 0) {
-          grid[j][i] = 0;
-          grid[j + 1][i - 1] = 1;
+        } else {
+          let prob = getRandomInt(0, 100);
+          if (prob < 50) {
+            if (i - 1 >= 0 && grid[j + 1][i - 1] === 0) {
+              grid[j][i] = 0;
+              grid[j + 1][i - 1] = 1;
+            } else if (i + 1 < gridWidth && grid[j + 1][i + 1] === 0) {
+              grid[j][i] = 0;
+              grid[j + 1][i + 1] = 1;
+            }
+          } else {
+            if (i + 1 < gridWidth && grid[j + 1][i + 1] === 0) {
+              grid[j][i] = 0;
+              grid[j + 1][i + 1] = 1;
+            } else if (i - 1 >= 0 && grid[j + 1][i - 1] === 0) {
+              grid[j][i] = 0;
+              grid[j + 1][i - 1] = 1;
+            }
+          }
         }
       }
     }
   }
-  newUpdateCanvas();
+  uodateCanvas();
 }
 
-
-function newUpdateCanvas() {
+function uodateCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   for (let j = 0; j < gridHeight; j++) {
     for (let i = 0; i < gridWidth; i++) {
@@ -95,5 +105,9 @@ function newUpdateCanvas() {
 }
 
 const clearGrid = () => {
+  grid = Array.from({ length: gridHeight }, () =>
+    Array.from({ length: gridWidth }, () => 0)
+  );
+
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 };
